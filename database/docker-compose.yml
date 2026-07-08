@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: adeva-sqlserver
+    user: root
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=TuPassword123!
+    volumes:
+      - ./init.sql:/usr/src/app/init.sql
+      - ./import-data.sh:/usr/src/app/import-data.sh
+      - ./entrypoint.sh:/usr/src/app/entrypoint.sh
+    entrypoint: /bin/bash /usr/src/app/entrypoint.sh

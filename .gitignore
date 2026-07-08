@@ -1,0 +1,12 @@
+node_modules/
+.env
+.DS_Store
+dist/
+build/
+coverage/
+
+# Mobile specific
+ios/Pods/
+android/.gradle/
+android/app/build/
+android/local.properties

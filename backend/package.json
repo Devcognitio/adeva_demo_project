@@ -1,0 +1,26 @@
+{
+  "name": "create-data-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"No unit tests configured\"",
+    "test:nfr": "npm run test:nfr:k6 && npm run test:nfr:load",
+    "test:nfr:k6": "k6 run tests/non-functional/k6-performance.js",
+    "test:nfr:load": "artillery run tests/non-functional/artillery-load.yml"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.1",
+    "express": "^5.2.1",
+    "morgan": "^1.10.1",
+    "mssql": "^12.2.1"
+  },
+  "devDependencies": {
+    "artillery": "^2.0.22"
+  }
+}
